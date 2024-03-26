@@ -22,7 +22,7 @@ const Detail = async ({ params }: { params: { id: string } }) => {
 
   {
     return !articleInfo?.userId ? (
-      <div>nono</div>
+      redirect("/article")
     ) : (
       <div>
         <h1>{articleInfo?.title}</h1>

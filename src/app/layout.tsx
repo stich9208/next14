@@ -8,7 +8,13 @@ export const metadata: Metadata = {
   description: "설명설명입니당당당",
 };
 
-const RootLayout = ({ children }: { children: ReactNode }) => {
+const RootLayout = ({
+  children,
+}: {
+  children: ReactNode;
+  test: ReactNode;
+  test2: ReactNode;
+}) => {
   return (
     <html lang="en">
       <head>
