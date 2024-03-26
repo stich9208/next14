@@ -15,7 +15,7 @@ const Article = async () => {
   return (
     <div>
       {articleList?.map((article: any) => (
-        <Link href={`${article.id}`}>
+        <Link href={`article/${article.id}`}>
           <div
             key={article.id}
             style={{

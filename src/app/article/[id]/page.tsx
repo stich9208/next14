@@ -1,32 +1,35 @@
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { redirect } from "next/navigation";
 
-const Detail = () => {
-  const pathname = usePathname();
-  const postId = pathname.split("/")[2];
-  const [articleInfo, setArticleInfo] = useState<{
-    body: string;
+const Detail = async ({ params }: { params: { id: string } }) => {
+  const postId = params.id;
+
+  const getArticleDetail = async () => {
+    const result = await fetch(
+      `https://jsonplaceholder.typicode.com/posts/${postId}`
+    );
+    const detailInfo = await result.json();
+    return detailInfo;
+  };
+
+  const articleInfo: {
+    userId: number;
     id: number;
     title: string;
-    userId: number;
-  }>({ body: "", id: 0, title: "", userId: 0 });
+    body: string;
+  } = await getArticleDetail();
 
-  useEffect(() => {
-    (async () => {
-      const info = await fetch(
-        `https://jsonplaceholder.typicode.com/posts/${postId}`
-      );
-      const parsed = await info.json();
-      setArticleInfo(parsed);
-    })();
-  }, []);
+  console.log(articleInfo);
 
-  return (
-    <div>
-      <h1>{articleInfo.title}</h1>
-      <p style={{ whiteSpace: "pre-wrap" }}>{articleInfo.body}</p>
-    </div>
-  );
+  {
+    return !articleInfo?.userId ? (
+      <div>nono</div>
+    ) : (
+      <div>
+        <h1>{articleInfo?.title}</h1>
+        <p style={{ whiteSpace: "pre-wrap" }}>{articleInfo?.body}</p>
+      </div>
+    );
+  }
 };
 
 export default Detail;

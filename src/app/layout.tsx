@@ -11,9 +11,11 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" type="image/svg+xml" href="/assets/vite.svg" />
+      </head>
       <body>
         <div id="root">{children}</div>
-        <script type="module" src="/src/main.tsx"></script>
       </body>
     </html>
   );
