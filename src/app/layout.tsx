@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "입시의 최전선 | 스터디프론트 STUDYFRONT",
     description:
       "내가 갈 대학교를 조금이라도 더 정확히. 최후의 1인이 되고 싶다면 스터디프론트에서",
-    url: "https://next14-alpha-blush.vercel.app/assets/arrow.png",
+    url: "https://next14-alpha-blush.vercel.app/public/assets/arrow.png",
   },
 };
 
