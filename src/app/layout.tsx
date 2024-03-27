@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     url: "https://next14-alpha-blush.vercel.app",
     images: [
       {
-        url: "https://next14-alpha-blush.vercel.app/public/assets/arrow.png",
+        url: "https://next14-alpha-blush.vercel.app/assets/arrow.png",
         width: 800,
         height: 600,
       },
